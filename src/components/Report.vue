@@ -160,6 +160,8 @@
     <!-- Records -->
     <div>
       <div class="border border-t-1 border-gray-200mt-3 mb-3 px-3"></div>
+
+      <!-- Criminal Records -->
       <div
         class="flex flex-col mb-5 font-bold text-lg text-left md:text-left mt-5"
         :class="reportSummary.criminalRecords ? 'text-blue-600':'text-green-500'"
@@ -179,6 +181,8 @@
           :record="record"
         ></RecordView>
       </div>
+
+      <!-- Sex Offender Records -->
       <div
         class="flex flex-col mb-5 font-bold text-lg text-left md:text-left mt-5"
         :class="reportSummary.sexOffenderRegistry ? 'text-blue-600':'text-green-500'"
@@ -198,6 +202,8 @@
           :record="record"
         ></RecordView>
       </div>
+
+      <!-- Patriot Act Records -->
       <div
         class="flex flex-col mb-5 font-bold text-lg text-left md:text-left mt-5"
         :class="reportSummary.patriotActRecords ? 'text-blue-600':'text-green-500'"
@@ -217,6 +223,9 @@
           :record="record"
         ></RecordView>
       </div>
+
+
+      <!-- Other Records Records -->
       <div
         class="flex flex-col mb-5 font-bold text-lg text-left md:text-left mt-5"
         :class="reportSummary.otherRecords ? 'text-green-600':'text-green-500'"
@@ -266,18 +275,24 @@ class Requestor {
   components: { RecordView },
 })
 export default class Report extends Vue {
-  @Prop() private reportdata!: Ieiresponse;
 
-  @Prop({ default: false }) private showOptional!: boolean;
+  @Prop()
+  private  reportdata!: Ieiresponse;
 
+  // Used during printing to force to display optional data
+  @Prop({ default: false })
+  private showOptional!: boolean;
+
+  // Displays report notes
   private showReportNotes = false;
+  private reportNotes: string = "";
 
   private reportSummary: any = {}
 
   private applicantNotes: string = "Nullam auctor, tellus sit amet eleifend interdum, ";
-  private reportNotes: string = "";
 
-  private report: ReportInfo = {    id: "1233",
+  private report: ReportInfo = {
+    id: "1233",
     requestor: {      name: "USA Online Volunteers",
       department: "Dpmt", address: "180 Imperial Plaza Dr.", address2: "Suite 300",
       city: "Imperial", state: "PA", zipCode: "12345"    },
@@ -285,6 +300,7 @@ export default class Report extends Vue {
 
   }
 
+  // Filters records based on their category
   private getRecordsByCategory(category: string): Record[] {
     const records: Record[] = new Array<Record>();
     if (this.reportdata.criminalinformation
@@ -302,6 +318,7 @@ export default class Report extends Vue {
     return records;
   }
 
+  // Create the report summary from reportdata
   created() {
     let socialSecurityNumber: number = 0;
     let criminalRecords: number = 0;

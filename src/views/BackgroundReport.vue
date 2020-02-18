@@ -47,7 +47,9 @@ import html2canvas, { Options } from 'html2canvas';
   components: { Report },
 })
 export default class BackgroundReport extends Vue {
+
   private service: ReportService = new ReportService();
+
   private data: Ieiresponse = this.service.getReports().ieiresponse as Ieiresponse;
 
   private contactInformation: { name: string; street: string; city: string; phone: string; fax: string; email: string } =

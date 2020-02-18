@@ -1,5 +1,6 @@
 <template>
   <div class="border-2 mb-3 text-sm">
+    <!-- Mandatory -->
     <div class="md:grid md:grid-flow-row md:grid-cols-3 gap-1 text-left flex flex-col">
       <span class="text-black font-bold text-right mr-5">Case Number</span>
       <div class="col-span-2">{{record.casenumber ? record.casenumber : '-'}}</div>
@@ -27,6 +28,8 @@
         class="col-span-2"
       >{{record.state ? record.state : '-'}},{{record.countycleansed ? record.countycleansed : '-'}}</div>
     </div>
+
+    <!-- Optional -->
     <div v-if="show || showOptional" class="bg-gray-100">
       <div class="md:grid md:grid-flow-row md:grid-cols-3 gap-1 text-left flex flex-col mt-3 mb-5">
         <span
@@ -67,15 +70,14 @@
          <font-awesome-icon :icon="['fa', 'caret-down']" size="1x" />
       </button>
     </div>
-    <!-- <div v-if="parseInt(record.offenses.count) >= 1 " class="border border-t-2 border-orange-200 mt-3 px-3"></div>-->
-    <!-- <div v-if="parseInt(record.offenses.count) >= 1 " class="text-left text-orange-600 font-bold mt-5 mb-2">Offenses</div>-->
-    
+    <!-- Offenses -->
     <OffenseView
       v-for="(offense, index) in record.offenses"
       :key="index"
       :offense="offense"
       :showOptional="showOptional"
     ></OffenseView>
+
   </div>
 </template>
 
@@ -87,10 +89,17 @@ import { Record } from '../models/report';
 @Component<RecordView>({
   components: { OffenseView },
 })
+// Component to display record informations
 export default class RecordView extends Vue {
 
-  @Prop() private record!: Record;
-  @Prop({ default: false }) private showOptional!: boolean;
+  @Prop()
+  private record!: Record;
+
+  // Used during printing to force to display optional data
+  @Prop({ default: false })
+  private showOptional!: boolean;
+
+  // Display optional data
   private show = false;
 
 }

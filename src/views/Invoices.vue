@@ -118,6 +118,7 @@ export default class Invoices extends Vue {
       window.open(image);
       */
 
+
       let position = 0;
       let hasPage = false;
       while ( position <= canvas.height) {

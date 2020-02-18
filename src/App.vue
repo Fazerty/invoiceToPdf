@@ -28,6 +28,7 @@ export default class App extends Vue {
 
   /*
    * Is the selected component printable?
+   * Used to display to print button.
    */
   private viewIsPrintable = false;
 
@@ -52,6 +53,7 @@ export default class App extends Vue {
 }
 
 </script>
+
 <style src="./assets/styles/main.css" />
 <style lang="scss">
 #app {

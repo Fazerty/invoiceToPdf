@@ -1,5 +1,6 @@
 <template>
   <div v-if="offense && typeof(offense) !==  'string'" class="bg-orange-100 mt-5">
+    <!-- Mandatory -->
     <div class="md:grid md:grid-flow-row md:grid-cols-3 gap-1 text-left flex flex-col">
       <span class="text-black font-bold text-right mr-5">Type</span>
       <div class="col-span-2">{{offense.type ? offense.type : '-'}}</div>
@@ -10,7 +11,8 @@
       <span class="text-black font-bold text-right mr-5">Court</span>
       <div class="col-span-2">{{offense.court ? offense.court : '-'}}</div>
     </div>
-    
+
+    <!-- Optional -->
     <div v-if="show || showOptional" class="bg-orange-200">
       <div class="md:grid md:grid-flow-row md:grid-cols-3 gap-1 text-left flex flex-col mt-3 mb-2">
         <span class="text-black font-bold text-right mr-5" v-if="offense.comments">Comments</span>
@@ -50,12 +52,17 @@ import { Offense } from '../models/report';
 @Component<OffenseView>({
   components: {},
 })
+// Component to display offense informations
 export default class OffenseView extends Vue {
 
-  @Prop({ default: false }) private showOptional!: boolean;
+  // Used during printing to force to display optional data
+  @Prop({ default: false })
+  private showOptional!: boolean;
 
-  @Prop() private offense!: Offense;
+  @Prop()
+  private offense!: Offense;
 
+  // Display optional data
   private show = false;
 }
 </script>
