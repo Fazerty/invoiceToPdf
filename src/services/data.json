@@ -1,0 +1,148 @@
+{
+  "ieiresponse": {
+    "requestinformation": {
+      "-code": "100",
+      "codemessage": "RECORDS FOUND",
+      "inputs": {
+        "firstname": "JOHN",
+        "lastname": "DOE",
+        "dob": {
+          "-year": "1970",
+          "-month": "01",
+          "-day": "01"
+        },
+        "ssn": {
+          "number": "123456789",
+          "status": "valid"
+        }
+      }
+    },
+    "criminalinformation": {
+      "records": {
+        "-count": "3",
+        "record": [
+          {
+            "-id": "LSlEsVS6Ht4mslPbhXRN1JDPCa2U7jWWXXXXXX",
+            "category": "CRIMINAL",
+            "sourceorjurisdiction": "VA COURTS",
+            "countycleansed": "GLOUCESTER",
+            "fipscode": "23604",
+            "state": "VA",
+            "fullname": "JOHN DOE",
+            "firstname": "JOHN",
+            "lastname": "DOE",
+            "fulldob": "01/01/1970",
+            "sex": "MALE",
+            "race": "WHITE",
+            "casenumber": "1234567",
+            "countyorjurisdiction": "SOME COUNTY",
+            "addresses": {
+              "-count": "1",
+              "address": {
+                "address1": "123 SOME LANE",
+                "city": "SOME CITY",
+                "state": "VA"
+              }
+            },
+            "offenses": {
+              "-count": "1",
+              "offense": {
+                "offensedescription": "THEFT CK 20",
+                "arrestdate": "00000000",
+                "casetype": "MISDEMEANOR",
+                "chargefilingdate": "01/14/2009",
+                "offensedate": "02/09/2007",
+                "offensecode": "23990033",
+                "court": "COUNTY CRIMINAL COURT 8",
+                "comments": "SENTENCE LENGTH: 0000000; PROBATION LENGTH: 0000000"
+              },
+              "offense (copy)": {
+                "offensedescription": "ASSAULT",
+                "arrestdate": "00000000",
+                "casetype": "FELONY",
+                "chargefilingdate": "01/14/2009",
+                "offensedate": "02/09/2007",
+                "offensecode": "23990033",
+                "court": "COUNTY CRIMINAL COURT 8",
+                "comments": "SENTENCE LENGTH: 0000000; PROBATION LENGTH: 0000000"
+              }
+            }
+          },
+          {
+            "-id": "mTsxmbe322i/0maIYXXXXXXX=",
+            "category": "PATRIOT",
+            "sourceorjurisdiction": "DEA BOSTON DIVISION",
+            "fullname": "JOHN EDWARD DOE",
+            "firstname": "JOHN",
+            "middlename": "EDWARD",
+            "lastname": "DOE",
+            "fulldob": "19700000",
+            "birthstate": "BOSTON, MASSACHUSETTS",
+            "sex": "MALE",
+            "race": "WHITE",
+            "haircolor": "WHITE/SILVER",
+            "eyecolor": "BLUE",
+            "weight": "180 LBS",
+            "height": "6'0\"",
+            "aliases": {
+              "-count": "1",
+              "alias": {
+                "fullname": "JOE DOE"
+              }
+            },
+            "offenses": {
+              "-count": "1",
+              "offense": {
+                "offensedescription": "RICO-MURDER",
+                "nciccode": "W93999999"
+              }
+            }
+          },
+          {
+            "-id": "TmEAQI5/n/owlXTR4mINeXzdSYFklhWGdjg3XXXXXXXX=",
+            "category": "SEX OFFENDER",
+            "sourceorjurisdiction": "PA SEX OFFENDER REGISTRY",
+            "countycleansed": "PITTSBURGH",
+            "fipscode": "34567",
+            "fullname": "JOHN EDWARD DOE",
+            "firstname": "JOHN",
+            "middlename": "EDWARD",
+            "lastname": "DOE",
+            "fulldob": "19830000",
+            "sex": "MALE",
+            "race": "WHITE",
+            "haircolor": "BLOND OR STRAWBERRY",
+            "eyecolor": "HAZEL",
+            "weight": "180 LBS",
+            "height": "6 FEET 00 INCHES",
+            "comments": "VERIFICATION DATE:  1/1/2008; OFFENDER CLASSIFICATION: SEXUALLY VIOLENT PREDATOR",
+            "aliases": {
+              "-count": "1",
+              "alias": {
+                "fullname": "JOE DOE",
+                "fulldob": "19830000"
+              }
+            },
+            "addresses": {
+              "-count": "1",
+              "address": {
+                "address1": "123 SOME LANE",
+                "city": "SOMECITY",
+                "state": "VA",
+                "zip": "12345"
+              }
+            },
+            "offenses": {
+              "-count": "1",
+              "offense": {
+                "offensedescription": "AGGRAVATED INDECENT ASSAULT",
+                "statute": "3125",
+                "convictiondate": "08/08/2008"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
