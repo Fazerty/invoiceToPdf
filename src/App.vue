@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="flex flex-col md:flex-row bg-background-primary" :class="theme">
     <div id="nav" class="flex flex-col bg-background-primary">
-      <ThemeSwitcher></ThemeSwitcher>
+      <!-- <ThemeSwitcher></ThemeSwitcher> -->
       <router-link to="/" class="mt-10 mb-5">Home</router-link>
       <router-link to="/invoices" class="mb-5">Invoice</router-link>
       <router-link to="/backgroundReport">BackgroundReport</router-link>
